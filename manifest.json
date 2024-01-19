@@ -2,7 +2,7 @@
     "name": "Catifier",
     "version": "1.0",
     "description": "Replace every image by a cat's image in a website you visit",
-    "permissions": ["declarativeNetRequest"],
+    "permissions": ["declarativeNetRequest", "activeTab", "scripting", "sidePanel", "cookies"],
     "host_permissions": ["<all_urls>"],
     "declarative_net_request": {
       "rule_resources": [
@@ -13,5 +13,25 @@
         }
       ]
     },
-    "manifest_version": 3
+    "manifest_version": 3,
+    "action": {
+        "default_title": "Click to view a popup",
+        "default_popup": "popup.html"
+      },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "js": [
+            "content.js"
+          ],
+          "matches": [
+            "https://reddit.com//"
+          ]
+        }
+      ],
+    "side_panel": {
+        "default_path": "side_panel.html"
+    }
 }

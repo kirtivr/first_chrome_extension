@@ -1,1 +1,1 @@
-Changes all images on any webpage into pictures of a cat. Experimenting with samplese from https://github.com/GoogleChrome/chrome-extensions-samples/.
+Experimenting with samples from https://github.com/GoogleChrome/chrome-extensions-samples/.
